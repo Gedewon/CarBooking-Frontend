@@ -1,0 +1,7 @@
+.opener {
+  @apply fixed bottom-4 bg-lime-400 text-white rounded-r-full transition-all;
+}
+
+.opener button {
+  @apply flex justify-center items-center p-4 rounded-r-full;
+}
