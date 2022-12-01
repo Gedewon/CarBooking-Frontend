@@ -1,0 +1,3 @@
+.logo-box {
+  @apply flex text-3xl gap-2 p-4;
+}
