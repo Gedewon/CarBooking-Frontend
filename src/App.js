@@ -1,9 +1,12 @@
+import { Routes, Route } from 'react-router-dom';
+import Splash from './pages/Splash';
+
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <Routes>
+        <Route path="/" element={<Splash />} />
+      </Routes>
     </div>
   );
 }
