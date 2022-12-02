@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import Splash from './pages/Splash';
-import AddCardForm from './pages/add_car/AddCardForm';
+import AddCarForm from './pages/AddCar/AddCarForm';
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Splash />} />
-        <Route path="/add/car" element={<AddCardForm />} />
+        <Route path="/add/car" element={<AddCarForm />} />
       </Routes>
     </div>
   );
