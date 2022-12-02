@@ -1,5 +1,5 @@
 .opener {
-  @apply fixed bottom-4 bg-lime-400 text-white rounded-r-full transition-all;
+  @apply fixed z-10 bottom-4 bg-lime-400 text-white rounded-r-full transition-all;
 }
 
 .opener button {

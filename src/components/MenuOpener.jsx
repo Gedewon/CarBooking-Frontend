@@ -11,8 +11,12 @@ const MenuOpener = (props) => {
   return (
     <div className={open ? 'opener left-48' : 'opener'}>
       <button type="button" onClick={handleClick}>
-        <div id="open" className={open ? 'scale-x-0' : ''}><BiRightArrow /></div>
-        <div id="close" className={open ? '' : 'scale-x-0'}><BiLeftArrow /></div>
+        <div id="open" className={open ? 'scale-x-0' : ''}>
+          <BiRightArrow />
+        </div>
+        <div id="close" className={open ? '' : 'scale-x-0'}>
+          <BiLeftArrow />
+        </div>
       </button>
     </div>
   );

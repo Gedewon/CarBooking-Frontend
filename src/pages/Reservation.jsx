@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CarDetail from '../components/CarDetail';
 
 function Reservation() {
+  const [ReserveOpener, setReserveOpener] = useState(false);
+
+  const toggleReservation = () => {
+    setReserveOpener(!ReserveOpener);
+  };
   return (
     <section
       className="flex flex-col justify-between md:flex-row p-4  md:p-8 md:pt-24 "
@@ -19,6 +24,8 @@ function Reservation() {
         carPrice="40000"
         carColor="Red"
         dueDate="Dec 22,2022"
+        toggleReservation={toggleReservation}
+        ReserveOpener={ReserveOpener}
       />
     </section>
   );
