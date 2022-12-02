@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import 'styles/navbar.css';
+@import 'styles/footer.css';
+@import 'styles/logo.css';
+@import 'styles/menuOpener.css';
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 body {
   margin: 0;

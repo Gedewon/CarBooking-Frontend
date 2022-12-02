@@ -1,0 +1,11 @@
+footer {
+  @apply flex flex-col gap-6;
+}
+
+.icons {
+  @apply flex gap-3 justify-center items-center text-4xl;
+}
+
+.credits {
+  @apply flex gap-3 justify-center items-center text-2xl;
+}
