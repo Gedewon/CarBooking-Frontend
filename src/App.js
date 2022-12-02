@@ -5,6 +5,7 @@ import MenuOpener from './components/MenuOpener';
 import Navbar from './components/Navbar';
 import Splash from './pages/Splash';
 import AddCarForm from './pages/AddCar/AddCarForm';
+import Cars from './pages/Cars';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -18,6 +19,7 @@ function App() {
       <Navbar open={open} />
       <Routes>
         <Route path="/" element={<Splash />} />
+        <Route path="/cars" element={<Cars />} />
         <Route path="/add_car" element={<AddCarForm />} />
         <Route path="/reservation" element={<Reservation />} />
       </Routes>
