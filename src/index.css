@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import 'styles/navbar.css';
+@import 'styles/footer.css';
+@import 'styles/logo.css';
+@import 'styles/menuOpener.css';
+@import 'styles/AddCarForm.css';
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 
 .btn-primary {
   @apply py-3 px-5 bg-lime-500 hover:bg-lime-600 text-white rounded-full;

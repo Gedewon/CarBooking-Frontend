@@ -1,0 +1,7 @@
+.add-form {
+  @apply flex flex-col justify-center items-center pt-16;
+}
+
+button.submit-button {
+  @apply bg-lime-400 text-white;
+}
