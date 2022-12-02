@@ -25,6 +25,10 @@ const userSlice = createSlice({
         state.status = action.message;
         state.user = {};
       })
+      .addCase(signUpUser.fulfilled, (state, action) => {
+        state.status = 'success';
+        state.user.push(action.payload);
+      })
   },
 });
 
