@@ -1,10 +1,17 @@
 import React from 'react';
 
 export default function LogIn() {
+  const formRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(formRef.current);
+    const data = Object.fromEntries(formData);
+ 
+  };
 
   return (
-    <form className="add-form">
-
+    <form ref={formRef} className="add-form" onSubmit={handleSubmit}>
       <div className="field group">
         <input
           type="text"
