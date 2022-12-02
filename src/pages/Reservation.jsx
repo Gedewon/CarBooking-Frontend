@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import CarDetail from '../components/CarDetail';
 
 function Reservation() {
@@ -7,6 +8,8 @@ function Reservation() {
   const toggleReservation = () => {
     setReserveOpener(!ReserveOpener);
   };
+  const { id } = useParams();
+
   return (
     <section
       className="flex flex-col justify-between md:flex-row p-4  md:p-8 md:pt-24 "
@@ -18,6 +21,7 @@ function Reservation() {
         className="flex-1"
       />
       <CarDetail
+        id={Number(id)}
         name="Hyundai Venue"
         carType="Kia Sonet"
         carBrand="Hyundai"

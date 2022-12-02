@@ -6,6 +6,7 @@ import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import ReserveCar from './ReserveCar';
 
 function CarDetail({
+  id,
   name,
   carType,
   carBrand,
@@ -18,6 +19,9 @@ function CarDetail({
   const handleClick = () => {
     toggleReservation();
   };
+
+  console.log('CarDetail: ');
+  console.log(id);
 
   return (
     <div className=" pr-8 flex flex-col md:w-96">
@@ -58,6 +62,7 @@ function CarDetail({
 export default CarDetail;
 
 CarDetail.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   carType: PropTypes.string.isRequired,
   carBrand: PropTypes.string.isRequired,

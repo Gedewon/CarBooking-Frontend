@@ -25,7 +25,7 @@ function Cars() {
   };
   return (
     <div className=" px-4 md:px-16">
-      <div className="flex flex-col items-center justify-center my-16 md:mb-32">
+      <div className="flex flex-col items-center justify-center py-16 md:pb-32">
         <h1 className=" text-4xl font-bold text-center">
           Latest Model Cars Available.
         </h1>
@@ -36,6 +36,7 @@ function Cars() {
       <Carousel responsive={responsive} autoPlay autoPlaySpeed={6000}>
         <div>
           <CarCard
+            id={1}
             img="https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/54399/exterior-right-front-three-quarter-10.jpeg?q=75"
             name="Hyundai Venue"
             carType="Kia Sonet"
@@ -46,6 +47,7 @@ function Cars() {
         </div>
         <div>
           <CarCard
+            id={2}
             img="https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/54399/exterior-right-front-three-quarter-10.jpeg?q=75"
             name="Hyundai Venue"
             carType="Kia Sonet"
@@ -56,6 +58,7 @@ function Cars() {
         </div>
         <div>
           <CarCard
+            id={3}
             img="https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/54399/exterior-right-front-three-quarter-10.jpeg?q=75"
             name="Hyundai Venue"
             carType="Kia Sonet"
@@ -66,6 +69,7 @@ function Cars() {
         </div>
         <div>
           <CarCard
+            id={4}
             img="https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/54399/exterior-right-front-three-quarter-10.jpeg?q=75"
             name="Hyundai Venue"
             carType="Kia Sonet"
@@ -76,6 +80,7 @@ function Cars() {
         </div>
         <div>
           <CarCard
+            id={5}
             img="https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/54399/exterior-right-front-three-quarter-10.jpeg?q=75"
             name="Hyundai Venue"
             carType="Kia Sonet"
@@ -86,6 +91,7 @@ function Cars() {
         </div>
         <div>
           <CarCard
+            id={6}
             img="https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/54399/exterior-right-front-three-quarter-10.jpeg?q=75"
             name="Hyundai Venue"
             carType="Kia Sonet"
