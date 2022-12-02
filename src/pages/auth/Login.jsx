@@ -1,13 +1,16 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useRef } from 'react';
+import { useSelector } from 'react-redux';
+
 
 export default function LogIn() {
+  const user = useSelector((state) => state.user);
   const formRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
- 
   };
 
   return (
