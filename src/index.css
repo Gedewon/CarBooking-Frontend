@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .btn-primary {
   @apply py-3 px-5 bg-lime-500 hover:bg-lime-600 text-white rounded-full;
 }
