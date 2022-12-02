@@ -1,20 +1,26 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useRef } from 'react';
-import { useSelector } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
+import logInUser from '../../redux/actions/User/logInUser';
 
 export default function LogIn() {
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
   const formRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
+    const userInfo = {
+      user: { name: data.name, password: data.password },
+    };
+    dispatch(logInUser(userInfo));
   };
 
   return (
     <form ref={formRef} className="add-form" onSubmit={handleSubmit}>
+      {errorMessage && <div className="alert">{errorMessage}</div>}
       <div className="field group">
         <input
           type="text"
