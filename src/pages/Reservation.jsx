@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CarDetail from '../components/CarDetail';
 
 function Reservation() {
-  const [ReserveOpener, setReserveOpener] = useState(false);
+  const [ReserveOpener, setReserveOpener] = useState(true);
 
   const toggleReservation = () => {
     setReserveOpener(!ReserveOpener);

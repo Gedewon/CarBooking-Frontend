@@ -44,7 +44,13 @@ function CarDetail({
         </button>
         <ChevronRightOutlinedIcon />
       </div>
-      <ReserveCar ReserveOpener={ReserveOpener} />
+      <ReserveCar
+        name={name}
+        carType={carType}
+        carPrice={carPrice}
+        ReserveOpener={ReserveOpener}
+        handleClick={handleClick}
+      />
     </div>
   );
 }
