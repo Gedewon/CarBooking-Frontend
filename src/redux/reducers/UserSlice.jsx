@@ -21,6 +21,10 @@ const userSlice = createSlice({
       .addCase(logInUser.rejected, (state) => {
         state.status = 'failed';
       })
+      .addCase(logOutUser.fulfilled, (state, action) => {
+        state.status = action.message;
+        state.user = {};
+      })
   },
 });
 
