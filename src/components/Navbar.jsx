@@ -10,10 +10,18 @@ const Navbar = (props) => {
     <nav className={open ? '' : '-translate-x-48'}>
       <Logo />
       <ul>
-        <li><NavLink to="cars">Cars</NavLink></li>
-        <li><NavLink to="reserve">Reserve</NavLink></li>
-        <li><NavLink to="my_reservations">My Reservations</NavLink></li>
-        <li><NavLink to="add_car">Add Car</NavLink></li>
+        <li>
+          <NavLink to="cars">Cars</NavLink>
+        </li>
+        <li>
+          <NavLink to="reservation">Reserve</NavLink>
+        </li>
+        <li>
+          <NavLink to="my_reservations">My Reservations</NavLink>
+        </li>
+        <li>
+          <NavLink to="add_car">Add Car</NavLink>
+        </li>
       </ul>
       <Footer />
     </nav>

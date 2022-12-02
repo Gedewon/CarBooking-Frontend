@@ -3,10 +3,22 @@ import PropTypes from 'prop-types';
 
 import SettingsIcon from '@mui/icons-material/Settings';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
+import ReserveCar from './ReserveCar';
 
 function CarDetail({
-  name, carType, carBrand, carPrice, carColor, dueDate,
+  name,
+  carType,
+  carBrand,
+  carPrice,
+  carColor,
+  dueDate,
+  toggleReservation,
+  ReserveOpener,
 }) {
+  const handleClick = () => {
+    toggleReservation();
+  };
+
   return (
     <div className=" pr-8 flex flex-col md:w-96">
       <h1 className=" self-end text-2xl">{name}</h1>
@@ -27,11 +39,18 @@ function CarDetail({
       </p>
       <div className="btn-primary mt-8 flex items-center justify-center md:self-start">
         <SettingsIcon />
-        <button type="button" className=" px-4">
+        <button type="button" className=" px-4" onClick={handleClick}>
           Reserve Car
         </button>
         <ChevronRightOutlinedIcon />
       </div>
+      <ReserveCar
+        name={name}
+        carType={carType}
+        carPrice={carPrice}
+        ReserveOpener={ReserveOpener}
+        handleClick={handleClick}
+      />
     </div>
   );
 }
@@ -45,4 +64,6 @@ CarDetail.propTypes = {
   carPrice: PropTypes.string.isRequired,
   carColor: PropTypes.string.isRequired,
   dueDate: PropTypes.string.isRequired,
+  toggleReservation: PropTypes.func.isRequired,
+  ReserveOpener: PropTypes.bool.isRequired,
 };
