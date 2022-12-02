@@ -1,9 +1,10 @@
 import React from 'react';
+import CarDetail from '../components/CarDetail';
 
 function Reservation() {
   return (
     <section
-      className=" p-8 pt-24 flex flex-col justify-between md:flex-row"
+      className="flex flex-col justify-between md:flex-row p-4  md:p-8 md:pt-24 "
       id="Reservation"
     >
       <img
@@ -11,20 +12,14 @@ function Reservation() {
         alt="Swift Car"
         className="flex-1"
       />
-      <div className=" pr-8 flex flex-col md:w-96">
-        <h1 className=" self-end text-2xl">Hyundai Venue</h1>
-        <p className="self-end pb-8">Kia Sonet</p>
-        <div className=" py-2 px-2 bg-slate-400 mb-3 flex justify-between">
-          <p className=" ">Hyundai</p>
-          <p className=" ">$40,000</p>
-        </div>
-        <p className=" text-sm self-end">Red Color</p>
-
-        <p className=" text-xs self-end">Rented untill Dec 22,2022</p>
-        <button type="button" className="btn-primary mt-8 md:self-start">
-          Reserve Car
-        </button>
-      </div>
+      <CarDetail
+        name="Hyundai Venue"
+        carType="Kia Sonet"
+        carBrand="Hyundai"
+        carPrice="40000"
+        carColor="Red"
+        dueDate="Dec 22,2022"
+      />
     </section>
   );
 }
