@@ -17,6 +17,9 @@ const reservationSlice = createSlice({
         state.status = 'success';
         state.reservation.push(action.payload);
       })
+      .addCase(getReservations.pending, (state) => {
+        state.status = 'loading';
+      })
   },
 });
 
