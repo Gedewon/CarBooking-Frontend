@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
+
 import CloseIcon from '@mui/icons-material/Close';
-import addReservations from '../redux/actions/Reservation/addReservation';
 
 import addReservations from '../../redux/actions/Reservation/addReservation';
 
@@ -25,28 +25,17 @@ function ReserveCar(props) {
     day: current.getDate(),
   };
 
-const defaultTo = {
-  year: current.getFullYear(),
-  month: current.getMonth() + 1,
-  day: current.getDate(),
-};
-const defaultRange = {
-  from: defaultFrom,
-  to: defaultTo,
-};
-function ReserveCar({
-  id,
-  name,
-  carType,
-  carPrice,
-  ReserveOpener,
-  handleClick,
-}) {
+  const defaultTo = {
+    year: current.getFullYear(),
+    month: current.getMonth() + 1,
+    day: current.getDate(),
+  };
+  const defaultRange = {
+    from: defaultFrom,
+    to: defaultTo,
+  };
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
-  const [city, setCity] = useState('');
   const [Total, setTotal] = useState(carPrice);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const date1 = new Date(
@@ -109,7 +98,8 @@ function ReserveCar({
         <div className=" py-2 px-2 bg-slate-400 flex justify-between">
           <p className=" ">{carType}</p>
           <p className=" ">
-            ${carPrice}
+            $
+            {carPrice}
             /Day
           </p>
         </div>

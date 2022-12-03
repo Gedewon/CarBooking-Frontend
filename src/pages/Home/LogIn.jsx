@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import logInUser from '../../redux/actions/User/logInUser';
+import logInUser from '../../redux/actions/User/loginUser';
 
 export default function LogIn() {
   const navigate = useNavigate();
