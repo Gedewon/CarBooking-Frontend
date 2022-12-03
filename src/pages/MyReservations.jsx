@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CarCard from '../components/CarCard';
 import getCars from '../redux/actions/Car/getCars';
-import getReservations from '../../redux/actions/Reservation/getReservation';
+import getReservations from '../redux/actions/Reservation/getReservation';
 
 function MyReservations() {
   const { reservation } = useSelector((state) => state.reservation);

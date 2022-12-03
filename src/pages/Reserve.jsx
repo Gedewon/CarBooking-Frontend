@@ -8,7 +8,7 @@ import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
 import RadioInput from '../components/Buttons/RadioInput';
 import getCars from '../redux/actions/Car/getCars';
 import Loading from '../components/Buttons/Loading';
-import addReservations from '../../redux/actions/Reservation/addReservation';
+import addReservations from '../redux/actions/Reservation/addReservation';
 
 const current = new Date();
 const defaultFrom = {
@@ -37,7 +37,6 @@ function Reserve() {
   const scrollPage = () => {
     calRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
 
   useEffect(() => {
     dispatch(getCars());

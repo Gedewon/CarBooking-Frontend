@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
-import Loading from '../../components/Buttons/Loading';
-import getCars from '../../redux/actions/getCars';
+import Loading from '../components/Buttons/Loading';
+import CarCard from '../components/CarCard';
+import getCars from '../redux/actions/Car/getCars';
 
 function Cars() {
   const { cars } = useSelector((state) => state.cars);

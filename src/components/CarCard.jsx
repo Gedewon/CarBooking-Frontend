@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import deleteCars from '../../redux/actions/Car/deleteCars';
+import deleteCars from '../redux/actions/Car/deleteCars';
 
 function CarCard({
   id,

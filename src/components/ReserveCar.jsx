@@ -1,35 +1,42 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-// import { Calendar, utils } from 'react-modern-calendar-datepicker';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
-
 import CloseIcon from '@mui/icons-material/Close';
+import addReservations from '../redux/actions/Reservation/addReservation';
 
-function ReserveCar(props) {
-  const current = new Date();
-  const {
-    name, carType, carPrice, ReserveOpener, handleClick,
-  } = props;
-  const defaultFrom = {
-    year: current.getFullYear(),
-    month: current.getMonth() + 1,
-    day: current.getDate(),
-  };
+const current = new Date();
+const defaultFrom = {
+  year: current.getFullYear(),
+  month: current.getMonth() + 1,
+  day: current.getDate(),
+};
 
-  const defaultTo = {
-    year: current.getFullYear(),
-    month: current.getMonth() + 1,
-    day: current.getDate(),
-  };
-  const defaultRange = {
-    from: defaultFrom,
-    to: defaultTo,
-  };
+const defaultTo = {
+  year: current.getFullYear(),
+  month: current.getMonth() + 1,
+  day: current.getDate(),
+};
+const defaultRange = {
+  from: defaultFrom,
+  to: defaultTo,
+};
+function ReserveCar({
+  id,
+  name,
+  carType,
+  carPrice,
+  ReserveOpener,
+  handleClick,
+}) {
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
+  const [city, setCity] = useState('');
   const [Total, setTotal] = useState(carPrice);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const date1 = new Date(
@@ -53,9 +60,18 @@ function ReserveCar(props) {
     setTotal(value);
   }, [selectedDayRange, Total, carPrice]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(selectedDayRange);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const reservationDate = `${selectedDayRange.from.year}-${selectedDayRange.from.month}-${selectedDayRange.from.day}`;
+    const dueDate = `${selectedDayRange.to.year}-${selectedDayRange.to.month}-${selectedDayRange.to.day}`;
+    const reservationInfo = {
+      car_id: id,
+      reservation_date: reservationDate,
+      due_date: dueDate,
+      city: city,
+    };
+    dispatch(addReservations(reservationInfo));
+    navigate('/my_reservations');
   };
 
   return (
@@ -63,7 +79,7 @@ function ReserveCar(props) {
       className={
         ReserveOpener
           ? 'hidden'
-          : ' bg-white fixed top-0 h-full w-5/6 p-4 md:w-96'
+          : ' bg-white fixed top-0 right-6 h-full w-5/6 p-4 md:w-96'
       }
     >
       <div className="flex flex-col gap-5 text-center">
@@ -84,8 +100,7 @@ function ReserveCar(props) {
         <div className=" py-2 px-2 bg-slate-400 flex justify-between">
           <p className=" ">{carType}</p>
           <p className=" ">
-            $
-            {carPrice}
+            ${carPrice}
             /Day
           </p>
         </div>
@@ -103,10 +118,19 @@ function ReserveCar(props) {
               {Total}
             </p>
           </div>
-          <button
-            type="submit"
-            className=" self-end focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-fit sm:w-auto px-5 py-2.5 text-center submit-button"
-          >
+          <div>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              value={city}
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
+              placeholder=" Enter city "
+            />
+          </div>
+          <button type="submit" className=" self-end submit-button">
             Submit
           </button>
         </form>
@@ -118,9 +142,10 @@ function ReserveCar(props) {
 export default ReserveCar;
 
 ReserveCar.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   carType: PropTypes.string.isRequired,
-  carPrice: PropTypes.string.isRequired,
+  carPrice: PropTypes.number.isRequired,
   ReserveOpener: PropTypes.bool.isRequired,
   handleClick: PropTypes.func.isRequired,
 };

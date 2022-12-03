@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import Loading from '../../components/Buttons/Loading';
-import CarDetail from '../../components/Cars/CarDetail';
-import getCars from '../../redux/actions/Car/getCars';
+import Loading from '../components/Buttons/Loading';
+import CarDetail from '../components/CarDetail';
+import getCars from '../redux/actions/Car/getCars';
 
 function Reservation() {
   const [ReserveOpener, setReserveOpener] = useState(true);
