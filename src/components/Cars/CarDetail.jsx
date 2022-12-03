@@ -26,10 +26,11 @@ function CarDetail({
       <p className="self-end pb-8">{carType}</p>
       <div className=" py-2 px-2 bg-slate-400 mb-3 flex justify-between">
         <p className=" ">{carBrand}</p>
-        <p className=" ">
-          $
-          {carPrice}
-        </p>
+        <p className=" ">${carPrice}</p>
+      </div>
+      <div className="self-end flex gap-4">
+        <p>Color: </p>
+        <div className={color} style={{ backgroundColor: carColor }} />
       </div>
       <div className="self-end flex gap-4">
         <p>Color: </p>
