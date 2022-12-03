@@ -34,6 +34,16 @@ const carSlice = createSlice({
       .addCase(createCars.rejected, (state) => {
         state.status = 'failed';
       })
+      .addCase(deleteCars.fulfilled, (state, action) => {
+        state.status = 'success';
+        state.cars = state.cars.filter((car) => car.id !== action.payload);
+      })
+      .addCase(deleteCars.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(deleteCars.rejected, (state) => {
+        state.status = 'failed';
+      });
   },
 });
 
