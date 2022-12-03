@@ -1,0 +1,7 @@
+.splash {
+  @apply bg-[url('https://images.unsplash.com/photo-1648413653877-ade5eefd2f1b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format')] bg-fixed bg-center bg-cover w-screen h-screen;
+}
+
+.overlay {
+  @apply bg-lime-400 bg-opacity-60 w-screen h-screen flex flex-col justify-center items-center gap-4 md:gap-16;
+}

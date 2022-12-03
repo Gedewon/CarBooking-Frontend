@@ -9,7 +9,7 @@ const MenuOpener = (props) => {
   };
 
   return (
-    <div className={open ? 'opener left-48' : 'opener'}>
+    <div className={open ? 'opener translate-x-48' : 'opener'}>
       <button type="button" onClick={handleClick}>
         <div id="open" className={open ? 'scale-x-0' : ''}>
           <BiRightArrow />
