@@ -1,5 +1,5 @@
 nav {
-  @apply w-48 py-8 h-screen flex flex-col fixed z-10 justify-between font-['Secular_One'] bg-white transition-all;
+  @apply w-48 py-8 h-screen flex flex-col fixed z-[1001] justify-between font-['Secular_One'] bg-white transition-all duration-300;
 }
 
 nav li {

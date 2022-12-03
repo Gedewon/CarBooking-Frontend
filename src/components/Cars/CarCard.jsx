@@ -2,22 +2,23 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import deleteCars from '../redux/actions/Car/deleteCars';
+import deleteCars from '../../redux/actions/Car/deleteCars';
 
-function CarCard({
-  id,
-  img,
-  name,
-  carType,
-  carBrand,
-  carPrice,
-  reservationDate,
-  reservation,
-  deleteCar,
-}) {
+function CarCard(props) {
   const dispatch = useDispatch();
   const location = useLocation();
 
+  const {
+    id,
+    img,
+    name,
+    carType,
+    carBrand,
+    carPrice,
+    reservationDate,
+    reservation,
+    deleteCar,
+  } = props;
   const reservationLink = `/cars/reservation/${id}`;
 
   const handleDelete = (e, id) => {
@@ -36,7 +37,11 @@ function CarCard({
         />
         <div className="p-5">
           <h1 className=" text-xl">
-            {name} ({carBrand})
+            {name}
+            {' '}
+            (
+            {carBrand}
+            )
           </h1>
           {!deleteCar && <p className=" text-sm">{carType}</p>}
           {reservation && (
@@ -46,7 +51,8 @@ function CarCard({
           )}
           {!reservation && !deleteCar && (
             <p className="self-end py-2 px-2 bg-lime-500 rounded-full my-4">
-              ${carPrice}
+              $
+              {carPrice}
               /day
             </p>
           )}

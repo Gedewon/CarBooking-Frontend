@@ -3,14 +3,14 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Buttons/Loading';
-import CarCard from '../../components/CarCard';
+import CarCard from '../../components/Cars/CarCard';
 import getCars from '../../redux/actions/Car/getCars';
 import getReservations from '../../redux/actions/Reservation/getReservation';
 
 export default function DeleteCar() {
-    const { cars } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
-  
+  const { cars } = useSelector((state) => state.cars);
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.

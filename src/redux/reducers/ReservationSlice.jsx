@@ -12,27 +12,32 @@ const reservationSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(getReservations.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.reservation.push(action.payload);
-      })
-      .addCase(getReservations.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(getReservations.rejected, (state) => {
-        state.status = 'failed';
-      })
-      .addCase(addReservations.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.reservation.push(action.payload);
-      })
-      .addCase(addReservations.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(addReservations.rejected, (state) => {
-        state.status = 'failed';
-      });
+    builder.addCase(getReservations.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      reservation: action.payload,
+    }));
+    builder.addCase(getReservations.pending, (state) => ({
+      ...state,
+      status: 'loading',
+    }));
+    builder.addCase(getReservations.rejected, (state) => ({
+      ...state,
+      status: 'failed',
+    }));
+    builder.addCase(addReservations.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      reservation: [...state.reservation, action.payload],
+    }));
+    builder.addCase(addReservations.pending, (state) => ({
+      ...state,
+      status: 'loading',
+    }));
+    builder.addCase(addReservations.rejected, (state) => ({
+      ...state,
+      status: 'failed',
+    }));
   },
 });
 

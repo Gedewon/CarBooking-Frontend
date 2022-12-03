@@ -1,10 +1,14 @@
-const BASE_URL = 'https://carbackend.onrender.com';
-const LOG_IN = '/api/v1/auth/sign_in';
-const SIGN_UP = '/api/v1/auth/sign_up';
-const LOG_OUT = '/api/v1/auth/sign_out';
+const BASE_URL = 'https://ezcar-backend.onrender.com';
+// const BASE_URL = 'http://localhost:3000';
+const IMAGE_URL = 'https://ik.imagekit.io/ezcar';
+const LOG_IN = '/login';
+const LOG_OUT = '/logout';
+const SIGN_UP = '/signup';
 const CARS = '/api/v1/cars';
 const RESERVATION = '/api/v1/reservations';
+const IMAGE_AUTH = '/private/auth_params';
+const IMAGE_KEY = 'public_eInAT404MVNpMKyc+zehqaVtmN0=';
 
 export {
-  BASE_URL, LOG_IN, LOG_OUT, SIGN_UP, CARS, RESERVATION
+  BASE_URL, LOG_IN, LOG_OUT, SIGN_UP, CARS, RESERVATION, IMAGE_URL, IMAGE_AUTH, IMAGE_KEY,
 };

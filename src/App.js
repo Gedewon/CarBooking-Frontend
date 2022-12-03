@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import MenuOpener from './components/MenuOpener';
-import Navbar from './components/Navbar';
+import MenuOpener from './components/NavBar/MenuOpener';
+import Navbar from './components/NavBar/Navbar';
 import RouterConfig from './navigation/RouterConfig';
 
 function App() {

@@ -1,0 +1,31 @@
+input[type='file'] {
+  @apply max-w-full;
+}
+
+.add-form {
+  @apply flex flex-col justify-center items-center p-4 w-4/5 sm:pt-16 sm:px-8 sm:pb-8 bg-white bg-opacity-50 backdrop-blur-sm rounded-md shadow-md md:w-1/2;
+}
+
+button.submit-button {
+  @apply bg-lime-400 text-white focus:ring-4 focus:outline-none font-bold rounded-lg text-sm w-fit sm:w-auto px-5 py-2.5 shadow-md text-center;
+}
+
+a.submit-button {
+  @apply bg-yellow-400 text-white focus:ring-4 focus:outline-none font-bold rounded-lg text-sm w-fit sm:w-auto px-5 py-2.5 shadow-md text-center;
+}
+
+.add-car-wrapper {
+  @apply bg-[url('https://images.unsplash.com/photo-1591293835940-934a7c4f2d9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format')] bg-cover bg-center w-screen h-screen;
+}
+
+.field {
+  @apply relative z-0 mb-6 w-full;
+}
+
+input.text-field {
+  @apply block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600;
+}
+
+.label-field {
+  @apply absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0];
+}

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CarCard from '../components/CarCard';
-import getCars from '../redux/actions/Car/getCars';
-import getReservations from '../redux/actions/Reservation/getReservation';
+import CarCard from '../../components/Cars/CarCard';
+import getCars from '../../redux/actions/Car/getCars';
+import getReservations from '../../redux/actions/Reservation/getReservation';
 
 function MyReservations() {
+  const dispatch = useDispatch();
   const { reservation } = useSelector((state) => state.reservation);
   const { cars } = useSelector((state) => state.cars);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getReservations());

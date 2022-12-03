@@ -5,38 +5,39 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
-import RadioInput from '../components/Buttons/RadioInput';
-import getCars from '../redux/actions/Car/getCars';
-import Loading from '../components/Buttons/Loading';
-import addReservations from '../redux/actions/Reservation/addReservation';
+import RadioInput from '../../components/Buttons/RadioInput';
+import getCars from '../../redux/actions/Car/getCars';
+import addReservations from '../../redux/actions/Reservation/addReservation';
+import Loading from '../../components/Buttons/Loading';
 
-const current = new Date();
-const defaultFrom = {
-  year: current.getFullYear(),
-  month: current.getMonth() + 1,
-  day: current.getDate(),
-};
-
-const defaultTo = {
-  year: current.getFullYear(),
-  month: current.getMonth() + 1,
-  day: current.getDate(),
-};
-const defaultRange = {
-  from: defaultFrom,
-  to: defaultTo,
-};
 function Reserve() {
-  const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
-  const { cars } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const { cars } = useSelector((state) => state.cars);
   const formRef = useRef();
   const calRef = useRef(null);
 
   const scrollPage = () => {
     calRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+  const navigate = useNavigate();
+
+  const current = new Date();
+  const defaultFrom = {
+    year: current.getFullYear(),
+    month: current.getMonth() + 1,
+    day: current.getDate(),
+  };
+
+  const defaultTo = {
+    year: current.getFullYear(),
+    month: current.getMonth() + 1,
+    day: current.getDate(),
+  };
+  const defaultRange = {
+    from: defaultFrom,
+    to: defaultTo,
+  };
+  const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
 
   useEffect(() => {
     dispatch(getCars());

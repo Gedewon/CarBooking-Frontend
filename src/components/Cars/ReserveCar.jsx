@@ -8,12 +8,22 @@ import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
 import CloseIcon from '@mui/icons-material/Close';
 import addReservations from '../redux/actions/Reservation/addReservation';
 
-const current = new Date();
-const defaultFrom = {
-  year: current.getFullYear(),
-  month: current.getMonth() + 1,
-  day: current.getDate(),
-};
+import addReservations from '../../redux/actions/Reservation/addReservation';
+
+function ReserveCar(props) {
+  const current = new Date();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const {
+    id, name, carType, carPrice, ReserveOpener, handleClick,
+  } = props;
+
+  const defaultFrom = {
+    year: current.getFullYear(),
+    month: current.getMonth() + 1,
+    day: current.getDate(),
+  };
 
 const defaultTo = {
   year: current.getFullYear(),
@@ -65,10 +75,9 @@ function ReserveCar({
     const reservationDate = `${selectedDayRange.from.year}-${selectedDayRange.from.month}-${selectedDayRange.from.day}`;
     const dueDate = `${selectedDayRange.to.year}-${selectedDayRange.to.month}-${selectedDayRange.to.day}`;
     const reservationInfo = {
-      car_id: id,
       reservation_date: reservationDate,
       due_date: dueDate,
-      city: city,
+      car_id: id,
     };
     dispatch(addReservations(reservationInfo));
     navigate('/my_reservations');
@@ -117,18 +126,6 @@ function ReserveCar({
               $
               {Total}
             </p>
-          </div>
-          <div>
-            <input
-              type="text"
-              name="city"
-              id="city"
-              value={city}
-              onChange={(e) => {
-                setCity(e.target.value);
-              }}
-              placeholder=" Enter city "
-            />
           </div>
           <button type="submit" className=" self-end submit-button">
             Submit

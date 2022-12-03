@@ -13,37 +13,45 @@ const carSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(getCars.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.cars.push(action.payload);
-      })
-      .addCase(getCars.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(getCars.rejected, (state) => {
-        state.status = 'failed';
-      })
-      .addCase(createCars.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.cars.push(action.payload);
-      })
-      .addCase(createCars.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(createCars.rejected, (state) => {
-        state.status = 'failed';
-      })
-      .addCase(deleteCars.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.cars = state.cars.filter((car) => car.id !== action.payload);
-      })
-      .addCase(deleteCars.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(deleteCars.rejected, (state) => {
-        state.status = 'failed';
-      });
+    builder.addCase(getCars.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      cars: action.payload,
+    }));
+    builder.addCase(getCars.pending, (state) => ({
+      ...state,
+      status: 'loading',
+    }));
+    builder.addCase(getCars.rejected, (state) => ({
+      ...state,
+      status: 'failed',
+    }));
+    builder.addCase(createCars.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      cars: [...state.cars, action.payload],
+    }));
+    builder.addCase(createCars.pending, (state) => ({
+      ...state,
+      status: 'loading',
+    }));
+    builder.addCase(createCars.rejected, (state) => ({
+      ...state,
+      status: 'failed',
+    }));
+    builder.addCase(deleteCars.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      cars: state.cars.filter((car) => car.id !== action.payload),
+    }));
+    builder.addCase(deleteCars.pending, (state) => ({
+      ...state,
+      status: 'loading',
+    }));
+    builder.addCase(deleteCars.rejected, (state) => ({
+      ...state,
+      status: 'failed',
+    }));
   },
 });
 

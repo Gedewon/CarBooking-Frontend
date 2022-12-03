@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
-import AddCarForm from '../pages/AddCar/AddCarForm';
-import Cars from '../pages/Cars';
-import DeleteCar from '../pages/DeleteCar/DeleteCar';
-import MyReservations from '../pages/MyReservations';
-import Reservation from '../pages/Reservation';
-import Reserve from '../pages/Reserve';
-import SignUp from '../pages/auth/SignUp';
-import Splash from '../pages/Splash'
+import Reservation from '../pages/Reserve/Reservation';
+import SignUp from '../pages/Home/SignUp';
+import Splash from '../pages/Home/Splash';
 import PrivateRoutes from './PrivateRoutes';
+import AddCarForm from '../pages/AddCar/AddCarForm';
+import Cars from '../pages/ListOfCars/Cars';
+import DeleteCar from '../pages/DeleteCar/DeleteCar';
+import MyReservations from '../pages/MyReservations/MyReservations';
+import Reserve from '../pages/Reserve/Reserve';
 
 export default function RouterConfig() {
   return (

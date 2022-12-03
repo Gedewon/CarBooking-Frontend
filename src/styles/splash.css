@@ -3,5 +3,5 @@
 }
 
 .overlay {
-  @apply bg-lime-400 bg-opacity-60 w-screen h-screen flex flex-col justify-center items-center gap-2 md:gap-10;
+  @apply bg-lime-400 bg-opacity-60 w-screen h-screen flex flex-col justify-center items-center gap-4 md:gap-16;
 }

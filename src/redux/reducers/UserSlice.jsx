@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import logInUser from '../actions/User/loginUser';
+import logInUser from '../actions/User/logInUser';
 import logOutUser from '../actions/User/logOutUser';
 import signUpUser from '../actions/User/signUpUser';
+import tokenLogger from '../actions/User/tokenLogger';
 
 const initialState = {};
 
@@ -10,25 +11,38 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(logInUser.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.user.push(action.payload);
-      })
-      .addCase(logInUser.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(logInUser.rejected, (state) => {
-        state.status = 'failed';
-      })
-      .addCase(logOutUser.fulfilled, (state, action) => {
-        state.status = action.message;
-        state.user = {};
-      })
-      .addCase(signUpUser.fulfilled, (state, action) => {
-        state.status = 'success';
-        state.user.push(action.payload);
-      });
+    builder.addCase(logInUser.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      user: action.payload,
+    }));
+    builder.addCase(logInUser.pending, (state) => ({
+      ...state,
+      status: 'loading',
+    }));
+    builder.addCase(logInUser.rejected, (state) => ({
+      ...state,
+      status: 'failed',
+    }));
+    builder.addCase(logOutUser.fulfilled, (state, action) => ({
+      ...state,
+      status: action.message,
+      user: {},
+    }));
+    builder.addCase(signUpUser.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      user: action.payload,
+    }));
+    builder.addCase(tokenLogger.fulfilled, (state, action) => ({
+      ...state,
+      status: 'success',
+      user: action.payload,
+    }));
+    builder.addCase(tokenLogger.rejected, (state) => ({
+      ...state,
+      status: 'failed token authentication',
+    }));
   },
 });
 
