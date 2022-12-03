@@ -17,7 +17,7 @@ function Reservation() {
 
   return (
     <section
-      className="flex flex-col justify-between md:flex-row p-4  md:p-8 md:pt-24 "
+      className="grid md:grid-cols-[4fr,_1fr] gap-3 items-center justify-between p-4  md:p-8 md:pt-8 "
       id="Reservation"
     >
       {car && car.id ? (
