@@ -18,12 +18,16 @@ function Reservation() {
   const car = cars.filter((car) => car.id === Number(id))[0];
 
   return (
-    <section >
+    <section
+      className="grid md:grid-cols-[4fr,_1fr] gap-3 items-center justify-between p-4  md:p-8 md:pt-8 "
+      id="Reservation"
+    >
       {car && car.id ? (
         <>
           <img
             src={car.image}
             alt={car.name}
+            className="rounded-3xl max-h-screen w-11/12 md:w-full object-cover"
           />
           <CarDetail
             id={Number(id)}
