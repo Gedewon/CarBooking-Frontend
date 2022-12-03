@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import CarDetail from '../components/CarDetail';
 
 function Reservation() {
   const [ReserveOpener, setReserveOpener] = useState(true);
+  const { cars } = useSelector((state) => state.cars);
+  const dispatch = useDispatch();
 
   const toggleReservation = () => {
     setReserveOpener(!ReserveOpener);
