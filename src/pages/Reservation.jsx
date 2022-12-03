@@ -10,6 +10,11 @@ function Reservation() {
   const toggleReservation = () => {
     setReserveOpener(!ReserveOpener);
   };
+
+  const { id } = useParams();
+
+  const car = cars.filter((car) => car.id === Number(id))[0];
+  
   return (
     <section
       className="flex flex-col justify-between md:flex-row p-4  md:p-8 md:pt-24 "
