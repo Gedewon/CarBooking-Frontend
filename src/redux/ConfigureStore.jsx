@@ -4,6 +4,8 @@ import userSlice from './reducers/UserSlice';
 
 const rootReducer = combineReducers({
   user: userSlice,
+  cars: carSlice,
+  reservation: ReservationSlice,
 });
 
 const store = configureStore({
