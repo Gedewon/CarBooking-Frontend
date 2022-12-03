@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CarDetail from '../components/CarDetail';
+import { useParams } from 'react-router-dom';
+import Loading from '../../components/Buttons/Loading';
+import CarDetail from '../../components/Cars/CarDetail';
+import getCars from '../../redux/actions/Car/getCars';
 
 function Reservation() {
   const [ReserveOpener, setReserveOpener] = useState(true);
@@ -10,6 +13,10 @@ function Reservation() {
   const toggleReservation = () => {
     setReserveOpener(!ReserveOpener);
   };
+
+  useEffect(() => {
+    dispatch(getCars());
+  }, [dispatch]);
 
   const { id } = useParams();
 
