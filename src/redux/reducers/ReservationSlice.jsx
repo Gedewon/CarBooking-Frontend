@@ -23,6 +23,16 @@ const reservationSlice = createSlice({
       .addCase(getReservations.rejected, (state) => {
         state.status = 'failed';
       })
+      .addCase(addReservations.fulfilled, (state, action) => {
+        state.status = 'success';
+        state.reservation.push(action.payload);
+      })
+      .addCase(addReservations.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(addReservations.rejected, (state) => {
+        state.status = 'failed';
+      });
   },
 });
 
