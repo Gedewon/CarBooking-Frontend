@@ -7,6 +7,10 @@ function Reservation() {
   const { cars } = useSelector((state) => state.cars);
   const dispatch = useDispatch();
 
+  const toggleReservation = () => {
+    setReserveOpener(!ReserveOpener);
+  };
+
   const { id } = useParams();
 
   const car = cars.filter((car) => car.id === Number(id))[0];
