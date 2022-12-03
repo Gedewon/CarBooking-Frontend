@@ -24,6 +24,16 @@ const carSlice = createSlice({
       .addCase(getCars.rejected, (state) => {
         state.status = 'failed';
       })
+      .addCase(createCars.fulfilled, (state, action) => {
+        state.status = 'success';
+        state.cars.push(action.payload);
+      })
+      .addCase(createCars.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(createCars.rejected, (state) => {
+        state.status = 'failed';
+      })
   },
 });
 
