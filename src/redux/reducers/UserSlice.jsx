@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import logInUser from '../actions/User/logInUser';
+import logInUser from '../actions/User/loginUser';
 import logOutUser from '../actions/User/logOutUser';
 import signUpUser from '../actions/User/signUpUser';
 
@@ -28,7 +28,7 @@ const userSlice = createSlice({
       .addCase(signUpUser.fulfilled, (state, action) => {
         state.status = 'success';
         state.user.push(action.payload);
-      })
+      });
   },
 });
 

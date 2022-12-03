@@ -1,102 +1,107 @@
-import React from 'react';
-import InputColor from 'react-input-color';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useRef, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import createCars from '../../redux/actions/Car/createCars';
 
 function AddCarForm() {
-	const [color, setColor] = React.useState({});
+  const [errorMessage, setErrorMessage] = useState('');
+  const cars = useSelector((state) => state.cars);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const formRef = useRef();
 
-	return (
-		<form className='add-form'>
-			<div className="relative z-0 mb-6 w-fit group">
-				<input
-					type="text"
-					name="floating_name"
-					id="floating_name"
-					className="block py-2.5 px-0 w-fit text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-dark dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
-					placeholder=" "
-					required
-				/>
-				<label
-					for="floating_name"
-					className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-				>
-					Name
-				</label>
-			</div>
-			<div className="relative z-0 mb-6 w-fit group">
-				<input
-					type="text"
-					name="floating_password"
-					id="floating_password"
-					className="block py-2.5 px-0 w-fit text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-dark dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
-					placeholder=" "
-					required
-				/>
-				<label
-					for="floating_password"
-					className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-				>
-					Type
-				</label>
-			</div>
-			<div className="relative z-0 mb-6 w-fit group">
-				<input
-					type="text"
-					name="repeat_password"
-					id="floating_repeat_password"
-					className="block py-2.5 px-0 w-fit text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-dark dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
-					placeholder=" "
-					required
-				/>
-				<label
-					for="floating_repeat_password"
-					className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-				>
-					Brand
-				</label>
-			</div>
-			<div className="grid md:grid-cols-1">
-				<div className="relative z-0 mb-6 w-fit group">
-					<input
-						type="text"
-						name="floating_url"
-						id="floating_url"
-						className="block py-2.5 px-0 w-fit text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-dark dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
-						placeholder=" "
-						required
-					/>
-					<label
-						for="floating_url"
-						className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-					>
-						Add the url of an Image
-					</label>
-				</div>
-				<div className="flex-column z-0 mb-6 w-fit group">
-					<input
-						type="text"
-						name="floating_last_name"
-						value={color.hex}
-						id="floating_last_name"
-						className="block py-2.5 px-0 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-dark dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600"
-						placeholder=" "
-						required
-					/>
-					Color
-					<label className="">
-						<div>
-							<InputColor initialValue="#5e72e4" onChange={setColor} placement="right" />
-						</div>
-					</label>
-				</div>
-			</div>
-			<button
-				type="submit"
-				className="focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-fit sm:w-auto px-5 py-2.5 text-center submit-button"
-			>
-				Submit
-			</button>
-		</form>
-	);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(formRef.current);
+    const data = Object.fromEntries(formData);
+    const carInfo = {
+      car: {
+        name: data.name,
+        image: data.image,
+        amount: data.fee_per_day,
+      },
+    };
+    dispatch(createCars(carInfo));
+    navigate('/cars');
+  };
+
+  useEffect(() => {
+    if (cars.status === 'success') {
+      try {
+        if (cars.cars.error) {
+          setErrorMessage(cars.cars.error);
+        }
+      } catch (e) {
+        setErrorMessage(e.error);
+      }
+    }
+  }, [cars]);
+
+  return (
+    <div className="add-car-wrapper">
+      <div className="overlay">
+        <form ref={formRef} className="add-form" onSubmit={handleSubmit}>
+          {errorMessage && <div className="alert">{errorMessage}</div>}
+          <div className="field group">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="text-field peer"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="name"
+              className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
+            >
+              Name
+            </label>
+          </div>
+          <div className="grid md:grid-cols-1 w-full">
+            <div className="field group">
+              <input
+                type="text"
+                name="image"
+                id="image"
+                className="text-field peer"
+                placeholder=" "
+                required
+              />
+              <label
+                htmlFor="image"
+                className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
+              >
+                Add a photo url
+              </label>
+            </div>
+            <div className="field group">
+              <input
+                type="number"
+                step=".01"
+                name="fee_per_day"
+                min={0}
+                id="fee_per_day"
+                className="text-field peer"
+                placeholder=" "
+                required
+              />
+              <label
+                htmlFor="fee_per_day"
+                className="peer-focus:font-medium label-field peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
+              >
+                Fee per day
+              </label>
+            </div>
+          </div>
+          <button type="submit" className="submit-button">
+            Create Car
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default AddCarForm;

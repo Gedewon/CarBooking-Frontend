@@ -16,4 +16,3 @@ const logInUser = createAsyncThunk('LOG_IN', async (userinfo) => {
 });
 
 export default logInUser;
-
