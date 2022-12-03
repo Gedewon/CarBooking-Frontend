@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const Reserve = () => (
-  <div>Reserve</div>
-);
+function Reservation() {
+  const [ReserveOpener, setReserveOpener] = useState(true);
+  const { cars } = useSelector((state) => state.cars);
 
-export default Reserve;
+  return (
+    <section>
+    </section>
+  );
+}
+
+export default Reservation;
