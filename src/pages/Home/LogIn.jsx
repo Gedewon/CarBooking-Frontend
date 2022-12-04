@@ -26,8 +26,10 @@ export default function LogIn() {
   useEffect(() => {
     if (user.status === 'success') {
       try {
-        if (user.user.error) {
-          setErrorMessage(user.user.error);
+        if (user.user.errors) {
+          let array_of_error = user.user.errors[0].split('.');
+          let error_message = array_of_error[array_of_error.length-1].replace('_',' ');
+          setErrorMessage(error_message);
         } else {
           navigate(state ? state.from : '/cars');
         }
@@ -35,7 +37,7 @@ export default function LogIn() {
         setErrorMessage(e.error);
       }
     }
-  }, [ user]);
+  }, [navigate, user, state]);
 
   return (
     <form ref={formRef} className="add-form" onSubmit={handleSubmit}>
