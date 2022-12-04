@@ -41,14 +41,12 @@ export default function SignUp() {
     const data = Object.fromEntries(formData);
     if (!isOfValidAge()) return;
     const userInfo = {
-      user: {
         name: data.name,
         email: data.email,
         date_of_birth: `${`${selectedDay.year}-${selectedDay.month}-${selectedDay.day}`}`,
         password: data.password,
         password_confirmation: data.password_confirmation,
-        photo: data.photo,
-      },
+        image_url: data.photo,
     };
     dispatch(signUpUser(userInfo));
   };
