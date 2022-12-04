@@ -18,6 +18,7 @@ function CarCard(props) {
     reservationDate,
     reservation,
     deleteCar,
+    city
   } = props;
   const reservationLink = `/cars/reservation/${id}`;
 
@@ -45,9 +46,14 @@ function CarCard(props) {
           </h1>
           {!deleteCar && <p className=" text-sm">{carType}</p>}
           {reservation && (
-            <div className="bg-lime-400 self-end p-2 rounded-full">
+            <div>
+            <div className="bg-lime-400  p-2 rounded-full">
               <p>{reservationDate}</p>
             </div>
+            <div className="  p-2 rounded-full">
+              <p>{city}</p>
+            </div>
+            </div> 
           )}
           {!reservation && !deleteCar && (
             <p className="self-end py-2 px-2 bg-lime-500 rounded-full my-4">
@@ -81,10 +87,12 @@ CarCard.propTypes = {
   reservationDate: PropTypes.string,
   reservation: PropTypes.bool,
   deleteCar: PropTypes.bool,
+  city:PropTypes.string
 };
 
 CarCard.defaultProps = {
   reservationDate: String(Date.now()),
   reservation: false,
   deleteCar: false,
+  city: ''
 };

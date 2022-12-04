@@ -38,7 +38,8 @@ function MyReservations() {
               carPrice={reservedCar.amount}
               carColor={reservedCar.color}
               reservation
-              reservationDate={res.reservation_date}
+              reservationDate={new Date(res.start_date).toDateString()}
+              city={res.city}
             />
           );
         })) : <div>No Reserved Cars</div> }
