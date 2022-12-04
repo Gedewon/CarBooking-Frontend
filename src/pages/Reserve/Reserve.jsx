@@ -51,8 +51,8 @@ function Reserve() {
     const reservationDate = `${selectedDayRange.from.year}-${selectedDayRange.from.month}-${selectedDayRange.from.day}`;
     const dueDate = `${selectedDayRange.to.year}-${selectedDayRange.to.month}-${selectedDayRange.to.day}`;
     const reservationInfo = {
-      reservation_date: reservationDate,
-      due_date: dueDate,
+      start_date:reservationDate,
+      end_date: dueDate,
       car_id: data.carRental,
     };
     dispatch(addReservations(reservationInfo));

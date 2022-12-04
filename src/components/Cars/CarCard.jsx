@@ -47,7 +47,6 @@ function CarCard(props) {
           {reservation && (
             <div className="bg-lime-400 self-end p-2 rounded-full">
               <p>{reservationDate}</p>
-              <p>{new Date(reservationDate)}</p>
             </div>
           )}
           {!reservation && !deleteCar && (
