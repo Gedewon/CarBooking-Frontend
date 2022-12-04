@@ -24,7 +24,7 @@ const userSlice = createSlice({
       ...state,
       status: 'failed',
     }));
-    builder.addCase(logOutUser.fulfilled, (state, action) => ({
+    builder.addCase(logOutUser.rejected, (state, action) => ({
       ...state,
       status: action.message,
       user: {},
