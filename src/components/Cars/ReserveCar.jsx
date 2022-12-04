@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
-import { State }  from 'country-state-city';
 import CloseIcon from '@mui/icons-material/Close';
+import { State }  from 'country-state-city';
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
@@ -39,7 +39,6 @@ function ReserveCar(props) {
   };
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
   const [Total, setTotal] = useState(carPrice);
-  console.log(State.getAllStates())
   const [selectedCity, setSelectedCity] = useState(State.getAllStates()[0])
 
   useEffect(() => {
