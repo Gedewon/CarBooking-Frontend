@@ -6,12 +6,11 @@ import PropTypes from 'prop-types';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
 import CloseIcon from '@mui/icons-material/Close';
-import { State }  from 'country-state-city';
-import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import { State } from 'country-state-city';
+import { Listbox, Transition } from '@headlessui/react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 import addReservations from '../../redux/actions/Reservation/addReservation';
-
 
 function ReserveCar(props) {
   const current = new Date();
@@ -39,7 +38,7 @@ function ReserveCar(props) {
   };
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
   const [Total, setTotal] = useState(carPrice);
-  const [selectedCity, setSelectedCity] = useState(State.getAllStates()[0])
+  const [selectedCity, setSelectedCity] = useState(State.getAllStates()[0]);
 
   useEffect(() => {
     const date1 = new Date(
@@ -65,12 +64,12 @@ function ReserveCar(props) {
     e.preventDefault();
     const reservationDate = `${selectedDayRange.from.year}-${selectedDayRange.from.month}-${selectedDayRange.from.day}`;
     const dueDate = `${selectedDayRange.to.year}-${selectedDayRange.to.month}-${selectedDayRange.to.day}`;
-  
+
     const reservationInfo = {
       start_date: reservationDate,
       end_date: dueDate,
       car_id: id,
-      city: selectedCity.name
+      city: selectedCity.name,
     };
     dispatch(addReservations(reservationInfo));
     navigate('/my_reservations');
@@ -125,7 +124,7 @@ function ReserveCar(props) {
             Submit
           </button>
 
-      <Listbox value={selectedCity} onChange={setSelectedCity}>
+          <Listbox value={selectedCity} onChange={setSelectedCity}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate">{selectedCity.name}</span>
@@ -174,7 +173,7 @@ function ReserveCar(props) {
             </Listbox.Options>
           </Transition>
         </div>
-      </Listbox>
+          </Listbox>
 
         </form>
       </div>

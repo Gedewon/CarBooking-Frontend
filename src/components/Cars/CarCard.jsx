@@ -18,7 +18,7 @@ function CarCard(props) {
     reservationDate,
     reservation,
     deleteCar,
-    city
+    city,
   } = props;
   const reservationLink = `/cars/reservation/${id}`;
 

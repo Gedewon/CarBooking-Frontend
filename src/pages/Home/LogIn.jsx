@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
 import logInUser from '../../redux/actions/User/loginUser';
+import { Link } from 'react-router-dom';
+import SignUp from './SignUp';
 
 export default function LogIn() {
   const navigate = useNavigate();
@@ -78,6 +80,12 @@ export default function LogIn() {
       >
         Login
       </button>
+      <div className='flex items-center justify-between gap-1'>
+        <label className='sm:text-sm'>
+      Or create a new account
+        </label>
+          <Link to="/sign_up" element={<SignUp />} className=" text-blue-500">Sign Up</Link>
+      </div>
     </form>
   );
 }

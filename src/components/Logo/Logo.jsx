@@ -6,10 +6,7 @@ import PropTypes from 'prop-types';
 const Logo = ({ extraClasses }) => (
   <div>
     <Link to="/">
-      <div className={`logo-box font-['Secular_One'] ${extraClasses}`}>
-        <FaCarAlt />
-        <span>CarBooking</span>
-      </div>
+     <img  src='/default.png' className={`w-36 h-36 sm:w-72 sm:h-72 ${extraClasses}`} />
     </Link>
   </div>
 );
