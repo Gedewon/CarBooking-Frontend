@@ -33,7 +33,6 @@ function Cars() {
     dispatch(getCars());
   }, [dispatch]);
 
-  console.log('cars',cars)
 
   return (
     <div className="pb-8 px-4 md:px-16">

@@ -17,9 +17,7 @@ export default function LogIn() {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
-    const userInfo = {
-      user: { email: data.email, password: data.password },
-    };
+    const userInfo = { email: data.email, password: data.password };
     dispatch(logInUser(userInfo));
   };
 
@@ -35,7 +33,7 @@ export default function LogIn() {
         setErrorMessage(e.error);
       }
     }
-  }, [navigate, user, state]);
+  }, [ user]);
 
   return (
     <form ref={formRef} className="add-form" onSubmit={handleSubmit}>
