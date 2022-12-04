@@ -5,7 +5,7 @@ const LOG_IN = 'api/v1/auth/sign_in';
 const LOG_OUT = 'api/v1/auth/sign_out';
 const SIGN_UP = 'api/v1/auth/sign_up';
 const CARS = 'api/v1/cars';
-const RESERVATION = '/api/v1/reservations';
+const RESERVATION = 'api/v1/reservations';
 const IMAGE_AUTH = 'api/v1/auth/imagekit';
 const IMAGE_KEY = 'public_FbHvKLKUQasD0G/tcdKYjl+MyO4=';
 
