@@ -11,12 +11,12 @@ const Navbar = (props) => {
   const { user } = useSelector((state) => state.user);
   return (
     <nav className={open ? '' : '-translate-x-48'}>
-      <Logo />
+      <Logo extraClasses={'flex justify-center mb-2  ring-1 mx-auto '} />
       {user && user.id && (
         <div className="flex justify-center items-center flex-col">
           <img alt={user.name} src={user.image_url} className="p-1 w-20 h-20 object-cover rounded-full ring-2 ring-gray-300" />
-          <h2 className="pt-3">{user.name}</h2>
-          <h2 className="text-sm">{user.email}</h2>
+          <h2 className="text-xs sm:text-sm pt-3">{user.name}</h2>
+          <h2 className="text-xs sm:text-sm">{user.email}</h2>
         </div>
       )}
       <ul>
