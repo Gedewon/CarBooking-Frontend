@@ -1,15 +1,10 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+![default-monochrome](https://user-images.githubusercontent.com/56429354/205527587-ac4a2eee-a331-4493-ab17-744ae465e646.svg#gh-light-mode-only)
+![default](https://user-images.githubusercontent.com/56429354/205528723-bced613e-619a-4c0f-aa30-e4c53ce7e501.svg#gh-dark-mode-only)
 
-# CarBooking Frontend
-
-> Book car is a platform to book a car that is present in different cities for a given period of time. The user selects the duration of rental per car model type and price range. if a user is an admin he can manage the car resources by updating the list of cars in the database.
+>Book car is a platform to book a car that is present in different cities for a given period of time. The user selects the duration of rental per car model type and price range. if a user is an admin he can manage the car resources by updating the list of cars in the database.
 
 ## Backend Repository
-
 [GitHub Link](https://github.com/Gedewon/CarBooking-Backend.git)
-
-## Website Mockup
-
 
 ## Built With
 
@@ -17,14 +12,6 @@
 - React
 - Redux
 - Tailwind CSS
-- MUI
-- Flowbite
-- ReactMultiCarousel
-
-### Tools
-- Visual Studio Code
-- GIT
-- Rubocop
 
 ## Live Demo
 
@@ -36,63 +23,43 @@
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-- npm 
-- git
+- nodev ^14 
+- git 
 
 ### Setup
 
 #### Open terminal
 
-    git clone https://github.com/Gedewon/CarBooking-Frontend.git
-    cd CarBooking-frontend
+    git clone https://github.com/Gedewon/CarBooking-Frontend.git &&  CarBooking-frontend 
    
 ### Install
-    npm install 
-    npm run build
+    npm install
+    
 ### Usage
     npm start
 
-### Deployment
+## [Kanban Board](https://github.com/users/Gedewon/projects/3)
 
-[Front-end Netlify Deployment](https://fbookcar.netlify.app/) 
-
-
-
-## Kanban Board
-
-### Link
-
-[GitHub Project](https://github.com/users/Gedewon/projects/3)
-
-### Initial State Project Link
-
-[GitHub First Issue](https://github.com/Gedewon/CarBooking-Backend/issues)
-
-### Final Team members
-
-- Abdul Hadi Jafari
-- Gedewon Hailegebrale
-- Tochukwu Orizu
 
 ## Authors
 
 👤 **Abdul Hadi Jafari**
 
-- GitHub:(https://github.com/Hadi111jafari)
-- Twitter:(https://twitter.com/jafari)
-- LinkedIn:(https://linkedin.com/in/Abdulhadi/)
+- [@GitHub](https://github.com/Hadi111jafari)
+- [@Twitter](https://twitter.com/jafari)
+- [@LinkedIn](https://www.linkedin.com/in/abdul-hadi-jafari/)
 
 👤 **Gedewon Hailegebrale**
 
-- GitHub: (https://github.com/Gedewon)
-- Twitter: (https://twitter.com/Gedewon)
-- LinkedIn: (https://www.linkedin.com/in/gedewon hailegebrale/)
+- [@GitHub](https://github.com/Gedewon)
+- [@Twitter](https://twitter.com/Gedewon)
+- [@LinkedIn](https://www.linkedin.com/in/gedewon)
 
 👤 **Tochukwu Orizu**
 
-- GitHub: (https://github.com/Bushido-brown)
-- Twitter: (https://twitter.com/Bushido-brown)
-- LinkedIn: (https://linkedin.com/in/tochukwuorizu/)
+- [@GitHub](https://github.com/Bushido-brown)
+- [@Twitter](https://twitter.com/Bushido-brown)
+- [@LinkedIn](https://linkedin.com/in/tochukwuorizu/)
 
 
 ## 🤝 Contributing
@@ -107,12 +74,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Splash Background Image by [T. Kaiser](https://unsplash.com/@tkaiser)
-- Add Car Background Image by [Jorgen Hendriksen](https://unsplash.com/@jor9en)
 - Design inspired by [Murat Korkmaz](https://www.behance.net/muratk) 
 - Hat tip to anyone whose code was used.
-- Inspiration.
-- Our supportive families and Microverse colleagues.
 
 ## 📝 License
 
