@@ -10,5 +10,6 @@ const IMAGE_AUTH = 'api/v1/auth/imagekit';
 const IMAGE_KEY = 'public_FbHvKLKUQasD0G/tcdKYjl+MyO4=';
 
 export {
-  BASE_URL, LOG_IN, LOG_OUT, SIGN_UP, CARS, RESERVATION, IMAGE_URL, IMAGE_AUTH, IMAGE_KEY,VALIDATE_TOKEN
+  // eslint-disable-next-line max-len
+  BASE_URL, LOG_IN, LOG_OUT, SIGN_UP, CARS, RESERVATION, IMAGE_URL, IMAGE_AUTH, IMAGE_KEY, VALIDATE_TOKEN,
 };

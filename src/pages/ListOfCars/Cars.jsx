@@ -33,7 +33,6 @@ function Cars() {
     dispatch(getCars());
   }, [dispatch]);
 
-
   return (
     <div className="pb-8 px-4 md:px-16">
       <div className="flex flex-col items-center justify-center py-8 md:py-16 md:pb-32">

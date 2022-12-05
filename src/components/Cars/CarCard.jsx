@@ -47,17 +47,20 @@ function CarCard(props) {
           {!deleteCar && <p className=" text-sm">{carType}</p>}
           {reservation && (
             <div>
-            <div className="bg-lime-400  p-2 rounded-full">
-              <p>{reservationDate}</p>
+              <div className="bg-lime-400  p-2 rounded-full">
+                <p>{reservationDate}</p>
+              </div>
+              <div className="  p-2 rounded-full">
+                <p>{city}</p>
+              </div>
             </div>
-            <div className="  p-2 rounded-full">
-              <p>{city}</p>
-            </div>
-            </div> 
           )}
           {!reservation && !deleteCar && (
             <p className="self-end py-2 px-2 bg-lime-500 rounded-full my-4">
-              ${carPrice}/day
+              $
+              {carPrice}
+              /
+              day
             </p>
           )}
           {deleteCar && (
@@ -87,12 +90,12 @@ CarCard.propTypes = {
   reservationDate: PropTypes.string,
   reservation: PropTypes.bool,
   deleteCar: PropTypes.bool,
-  city:PropTypes.string
+  city: PropTypes.string,
 };
 
 CarCard.defaultProps = {
   reservationDate: String(Date.now()),
   reservation: false,
   deleteCar: false,
-  city: ''
+  city: '',
 };

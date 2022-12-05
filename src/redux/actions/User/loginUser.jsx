@@ -10,7 +10,7 @@ const logInUser = createAsyncThunk('LOG_IN', async (userinfo) => {
     },
     body: JSON.stringify(userinfo),
   });
-  
+
   localStorage.setItem('token', response.headers.get('Authorization'));
   const user = await response.json();
   return user;

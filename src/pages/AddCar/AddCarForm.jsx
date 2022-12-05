@@ -25,13 +25,13 @@ function AddCarForm() {
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
     const carInfo = {
-        name: data.name,
-        car_type: data.car_type,
-        brand: data.brand,
-        amount: data.fee_per_day,
-        color: data.color,
-        image: data.image,
-        rented: false,
+      name: data.name,
+      car_type: data.car_type,
+      brand: data.brand,
+      amount: data.fee_per_day,
+      color: data.color,
+      image: data.image,
+      rented: false,
     };
     dispatch(createCars(carInfo));
     navigate('/cars');

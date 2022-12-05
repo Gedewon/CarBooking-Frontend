@@ -12,10 +12,9 @@ function MyReservations() {
   useEffect(() => {
     dispatch(getReservations());
     dispatch(getCars());
-  }, []);
+  }, [dispatch]);
 
   const car = (id) => cars.filter((car) => car.id === id);
-
 
   return (
     <div className="pb-4">
