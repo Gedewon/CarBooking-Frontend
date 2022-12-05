@@ -40,7 +40,7 @@ function Reservation() {
             name={car.name}
             carType={car.car_type}
             carBrand={car.brand}
-            carPrice={car.fee_per_day}
+            carPrice={car.amount}
             carColor={car.color}
             toggleReservation={toggleReservation}
             ReserveOpener={ReserveOpener}

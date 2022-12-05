@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css';
 import { Calendar, utils } from '@hassanmojab/react-modern-calendar-datepicker';
-
 import CloseIcon from '@mui/icons-material/Close';
+import { State } from 'country-state-city';
+import { Listbox, Transition } from '@headlessui/react';
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 import addReservations from '../../redux/actions/Reservation/addReservation';
 
@@ -36,6 +38,7 @@ function ReserveCar(props) {
   };
   const [selectedDayRange, setSelectedDayRange] = useState(defaultRange);
   const [Total, setTotal] = useState(carPrice);
+  const [selectedCity, setSelectedCity] = useState(State.getAllStates()[0]);
 
   useEffect(() => {
     const date1 = new Date(
@@ -50,10 +53,8 @@ function ReserveCar(props) {
       date2 = date1;
     }
 
-    // To calculate the time difference of two dates
     const differenceInTime = date2.getTime() - date1.getTime();
 
-    // To calculate the no. of days between two dates
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     const value = (differenceInDays + 1) * carPrice;
     setTotal(value);
@@ -63,10 +64,12 @@ function ReserveCar(props) {
     e.preventDefault();
     const reservationDate = `${selectedDayRange.from.year}-${selectedDayRange.from.month}-${selectedDayRange.from.day}`;
     const dueDate = `${selectedDayRange.to.year}-${selectedDayRange.to.month}-${selectedDayRange.to.day}`;
+
     const reservationInfo = {
-      reservation_date: reservationDate,
-      due_date: dueDate,
+      start_date: reservationDate,
+      end_date: dueDate,
       car_id: id,
+      city: selectedCity.name,
     };
     dispatch(addReservations(reservationInfo));
     navigate('/my_reservations');
@@ -120,6 +123,58 @@ function ReserveCar(props) {
           <button type="submit" className=" self-end submit-button">
             Submit
           </button>
+
+          <Listbox value={selectedCity} onChange={setSelectedCity}>
+        <div className="relative mt-1">
+          <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+            <span className="block truncate">{selectedCity.name}</span>
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+              <ChevronUpDownIcon
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </span>
+          </Listbox.Button>
+          <Transition
+            as={Fragment}
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              {State.getAllStates().slice(0,100).map((person, personIdx) => (
+                <Listbox.Option
+                  key={personIdx}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                    }`
+                  }
+                  value={person}
+                >
+                  {({ selected }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? 'font-medium' : 'font-normal'
+                        }`}
+                      >
+                        {person.name}
+                      </span>
+                      {selected ? (
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+          </Listbox>
+
         </form>
       </div>
     </div>

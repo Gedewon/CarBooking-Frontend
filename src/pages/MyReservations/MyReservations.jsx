@@ -12,12 +12,10 @@ function MyReservations() {
   useEffect(() => {
     dispatch(getReservations());
     dispatch(getCars());
-  }, [dispatch, cars.cars]);
+  }, []);
 
-  const car = (id) => {
-    const filterdCar = cars.filter((car) => car.id === id);
-    return filterdCar;
-  };
+  const car = (id) => cars.filter((car) => car.id === id);
+
 
   return (
     <div className="pb-4">
@@ -26,6 +24,7 @@ function MyReservations() {
         <p className=" text-xs text-slate-400">Lists of all reservations.</p>
       </div>
       <div className="grid grid-cols-responsive px gap-4 justify-items-center">
+        {/* {JSON.stringify(reservation)} */}
         {reservation.length > 0 && cars.length > 0 ? (reservation.map((res) => {
           const reservedCar = car(res.car_id)[0];
           return (
@@ -36,10 +35,11 @@ function MyReservations() {
               name={reservedCar.name}
               carType={reservedCar.car_type}
               carBrand={reservedCar.brand}
-              carPrice={reservedCar.fee_per_day}
+              carPrice={reservedCar.amount}
               carColor={reservedCar.color}
               reservation
-              reservationDate={res.reservation_date}
+              reservationDate={new Date(res.start_date).toDateString()}
+              city={res.city}
             />
           );
         })) : <div>No Reserved Cars</div> }
