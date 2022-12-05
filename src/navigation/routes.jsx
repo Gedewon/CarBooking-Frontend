@@ -1,5 +1,4 @@
-const BASE_URL = 'http://localhost:3000/';
-// const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://carbackend.onrender.com/';
 const IMAGE_URL = 'https://ik.imagekit.io/carbackend/';
 const LOG_IN = 'api/v1/auth/sign_in';
 const VALIDATE_TOKEN = 'api/v1/auth/validate_token';
