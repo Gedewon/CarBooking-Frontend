@@ -4,7 +4,7 @@ import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import deleteCars from '../../redux/actions/Car/deleteCars';
 
-function CarCard(props) {
+const CarCard = (props) => {
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -76,7 +76,7 @@ function CarCard(props) {
       </div>
     </Link>
   );
-}
+};
 
 export default CarCard;
 

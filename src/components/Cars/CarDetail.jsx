@@ -5,7 +5,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import ReserveCar from './ReserveCar';
 
-function CarDetail({
+const CarDetail = ({
   id,
   name,
   carType,
@@ -14,7 +14,7 @@ function CarDetail({
   carColor,
   toggleReservation,
   ReserveOpener,
-}) {
+}) => {
   const color = 'self-end p-4';
   const handleClick = () => {
     toggleReservation();
@@ -52,7 +52,7 @@ function CarDetail({
       />
     </div>
   );
-}
+};
 
 export default CarDetail;
 

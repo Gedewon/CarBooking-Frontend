@@ -15,7 +15,7 @@ import getCars from '../../redux/actions/Car/getCars';
 import addReservations from '../../redux/actions/Reservation/addReservation';
 import Loading from '../../components/Buttons/Loading';
 
-function Reserve() {
+const Reserve = () => {
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
   const formRef = useRef();
@@ -159,6 +159,6 @@ function Reserve() {
       </form>
     </div>
   );
-}
+};
 
 export default Reserve;

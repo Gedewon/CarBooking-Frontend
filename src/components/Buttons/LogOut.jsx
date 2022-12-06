@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import logOutUser from '../../redux/actions/User/logOutUser';
 
-export default function LogOut() {
+const LogOut = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -17,4 +17,5 @@ export default function LogOut() {
       LOG OUT
     </button>
   );
-}
+};
+export default LogOut;

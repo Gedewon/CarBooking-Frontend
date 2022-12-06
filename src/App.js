@@ -4,7 +4,7 @@ import MenuOpener from './components/NavBar/MenuOpener';
 import Navbar from './components/NavBar/Navbar';
 import RouterConfig from './navigation/RouterConfig';
 
-function App() {
+const App = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
 
@@ -24,6 +24,6 @@ function App() {
       <RouterConfig />
     </div>
   );
-}
+};
 
 export default App;

@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import Forbidden from './Forbidden';
 
-export default function PrivateRoutes({ children, requiresAdmin }) {
+const PrivateRoutes = ({ children, requiresAdmin }) => {
   const location = useLocation();
   const { user, status } = useSelector((state) => state.user);
   const isAdmin = user && user.role === 'admin';
@@ -25,7 +25,7 @@ export default function PrivateRoutes({ children, requiresAdmin }) {
   }
 
   return children;
-}
+};
 
 PrivateRoutes.propTypes = {
   children: PropTypes.element.isRequired,
@@ -35,3 +35,4 @@ PrivateRoutes.propTypes = {
 PrivateRoutes.defaultProps = {
   requiresAdmin: false,
 };
+export default PrivateRoutes;

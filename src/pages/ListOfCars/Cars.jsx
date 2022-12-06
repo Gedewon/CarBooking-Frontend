@@ -6,7 +6,7 @@ import Loading from '../../components/Buttons/Loading';
 import CarCard from '../../components/Cars/CarCard';
 import getCars from '../../redux/actions/Car/getCars';
 
-function Cars() {
+const Cars = () => {
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
   const responsive = {
@@ -65,6 +65,6 @@ function Cars() {
         : <Loading message="Loading Cars" /> }
     </div>
   );
-}
+};
 
 export default Cars;

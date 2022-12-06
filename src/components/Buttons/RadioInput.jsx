@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function RadioInput(props) {
+const RadioInput = (props) => {
   const {
     id, name, carType, carPrice, scrollPage,
   } = props;
@@ -47,7 +47,7 @@ function RadioInput(props) {
       </label>
     </li>
   );
-}
+};
 
 export default RadioInput;
 

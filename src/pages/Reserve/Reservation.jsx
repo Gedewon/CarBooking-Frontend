@@ -5,7 +5,7 @@ import Loading from '../../components/Buttons/Loading';
 import CarDetail from '../../components/Cars/CarDetail';
 import getCars from '../../redux/actions/Car/getCars';
 
-function Reservation() {
+const Reservation = () => {
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
 
@@ -49,6 +49,6 @@ function Reservation() {
       ) : <Loading message="Loading Car information..." /> }
     </section>
   );
-}
+};
 
 export default Reservation;

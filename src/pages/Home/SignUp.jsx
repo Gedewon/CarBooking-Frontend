@@ -12,7 +12,7 @@ import {
   BASE_URL, IMAGE_AUTH, IMAGE_KEY, IMAGE_URL,
 } from '../../navigation/routes';
 
-export default function SignUp() {
+const SignUp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const formRef = useRef();
@@ -211,4 +211,5 @@ export default function SignUp() {
       </div>
     </div>
   );
-}
+};
+export default SignUp;

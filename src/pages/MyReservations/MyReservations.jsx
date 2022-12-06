@@ -4,7 +4,7 @@ import CarCard from '../../components/Cars/CarCard';
 import getCars from '../../redux/actions/Car/getCars';
 import getReservations from '../../redux/actions/Reservation/getReservation';
 
-function MyReservations() {
+const MyReservations = () => {
   const dispatch = useDispatch();
   const { reservation } = useSelector((state) => state.reservation);
   const { cars } = useSelector((state) => state.cars);
@@ -45,6 +45,6 @@ function MyReservations() {
       </div>
     </div>
   );
-}
+};
 
 export default MyReservations;

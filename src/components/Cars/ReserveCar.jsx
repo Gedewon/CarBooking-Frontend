@@ -12,7 +12,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
 import addReservations from '../../redux/actions/Reservation/addReservation';
 
-function ReserveCar(props) {
+const ReserveCar = (props) => {
   const current = new Date();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -178,7 +178,7 @@ function ReserveCar(props) {
       </div>
     </div>
   );
-}
+};
 
 export default ReserveCar;
 

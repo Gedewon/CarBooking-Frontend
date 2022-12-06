@@ -10,7 +10,7 @@ import {
   BASE_URL, IMAGE_AUTH, IMAGE_KEY, IMAGE_URL,
 } from '../../navigation/routes';
 
-function AddCarForm() {
+const AddCarForm = () => {
   const [color, setColor] = React.useState({});
   const [imageMessage, setImageMessage] = useState('');
   const [progress, setProgress] = useState(0);
@@ -198,6 +198,6 @@ function AddCarForm() {
       </div>
     </div>
   );
-}
+};
 
 export default AddCarForm;

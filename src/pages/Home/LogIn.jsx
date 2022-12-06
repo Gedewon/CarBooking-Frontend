@@ -6,7 +6,7 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import logInUser from '../../redux/actions/User/loginUser';
 import SignUp from './SignUp';
 
-export default function LogIn() {
+const LogIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const formRef = useRef();
@@ -89,4 +89,5 @@ export default function LogIn() {
       </div>
     </form>
   );
-}
+};
+export default LogIn;

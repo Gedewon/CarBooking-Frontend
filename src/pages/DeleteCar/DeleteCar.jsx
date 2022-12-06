@@ -7,7 +7,7 @@ import CarCard from '../../components/Cars/CarCard';
 import getCars from '../../redux/actions/Car/getCars';
 import getReservations from '../../redux/actions/Reservation/getReservation';
 
-export default function DeleteCar() {
+const DeleteCar = () => {
   const dispatch = useDispatch();
   const { cars } = useSelector((state) => state.cars);
 
@@ -68,4 +68,5 @@ export default function DeleteCar() {
       </Carousel>
     </div>
   );
-}
+};
+export default DeleteCar;
