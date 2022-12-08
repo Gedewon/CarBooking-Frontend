@@ -18,6 +18,12 @@
 [BookCar on Netlify](https://fbookcar.netlify.app/)<br/>
 [BookCar on Render ](https://bookcar.onrender.com/)
 
+## Kanban board
+ - link to [kanban board](https://github.com/users/Gedewon/projects/3)
+ - we are a team of 3 members.
+ > ![screencapture-github-users-Gedewon-projects-3-views-1-2022-12-08-18_22_44](https://user-images.githubusercontent.com/56429354/206513773-634312f5-032b-43ef-bbb1-87a1d6c77512.png)
+
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
