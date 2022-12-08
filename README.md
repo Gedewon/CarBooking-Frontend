@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+![default-monochrome](https://user-images.githubusercontent.com/56429354/205527587-ac4a2eee-a331-4493-ab17-744ae465e646.svg#gh-light-mode-only)
+![default](https://user-images.githubusercontent.com/56429354/205528723-bced613e-619a-4c0f-aa30-e4c53ce7e501.svg#gh-dark-mode-only)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+>Book car is a platform to book a car that is present in different cities for a given period of time. The user selects the duration of rental per car model type and price range. if a user is an admin he can manage the car resources by updating the list of cars in the database.
 
-## Available Scripts
+## Backend Repository
+[GitHub Link](https://github.com/Gedewon/CarBooking-Backend.git)
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+### Technologies
+- React
+- Redux
+- Tailwind CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[BookCar on Netlify](https://fbookcar.netlify.app/)<br/>
+[BookCar on Render ](https://bookcar.onrender.com/)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get a local copy up and running follow these simple example steps.
 
-### `npm run build`
+### Prerequisites
+- nodev ^14 
+- git 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Open terminal
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    git clone https://github.com/Gedewon/CarBooking-Frontend.git &&  CarBooking-frontend 
+   
+### Install
+    npm install
+    
+### Usage
+    npm start
 
-### `npm run eject`
+## [Kanban Board](https://github.com/users/Gedewon/projects/3)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Authors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+👤 **Abdul Hadi Jafari**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [@GitHub](https://github.com/Hadi111jafari)
+- [@Twitter](https://twitter.com/jafari)
+- [@LinkedIn](https://www.linkedin.com/in/abdul-hadi-jafari/)
 
-## Learn More
+👤 **Gedewon Hailegebrale**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [@GitHub](https://github.com/Gedewon)
+- [@Twitter](https://twitter.com/Gedewon)
+- [@LinkedIn](https://www.linkedin.com/in/gedewon)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Tochukwu Orizu**
 
-### Code Splitting
+- [@GitHub](https://github.com/Bushido-brown)
+- [@Twitter](https://twitter.com/Bushido-brown)
+- [@LinkedIn](https://linkedin.com/in/tochukwuorizu/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions, issues, and feature requests are welcome!
 
-### Making a Progressive Web App
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Show your support
 
-### Advanced Configuration
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgments
 
-### Deployment
+- Design inspired by [Murat Korkmaz](https://www.behance.net/muratk) 
+- Hat tip to anyone whose code was used.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📝 License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./LICENSE) licensed.

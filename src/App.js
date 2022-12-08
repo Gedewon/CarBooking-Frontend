@@ -1,14 +1,29 @@
-import { Routes, Route } from 'react-router-dom';
-import Splash from './pages/Splash';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import MenuOpener from './components/NavBar/MenuOpener';
+import Navbar from './components/NavBar/Navbar';
+import RouterConfig from './navigation/RouterConfig';
 
-function App() {
+const App = () => {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
+
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<Splash />} />
-      </Routes>
+      { (location.pathname !== '/' && location.pathname !== '/sign_up')
+        && (
+        <>
+          <MenuOpener open={open} toggleMenu={toggleMenu} />
+          <Navbar open={open} />
+        </>
+        )}
+      <RouterConfig />
     </div>
   );
-}
+};
 
 export default App;

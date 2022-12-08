@@ -1,0 +1,15 @@
+nav {
+  @apply w-48 py-8 h-screen flex flex-col fixed z-[1001] justify-between font-['Secular_One'] bg-white transition-all duration-300;
+}
+
+nav li {
+  @apply p-4 font-bold active:bg-lime-500 active:text-white hover:bg-lime-600 hover:text-white uppercase text-gray-600;
+}
+
+nav li:has(.active) {
+  @apply bg-lime-500 text-white hover:bg-lime-500;
+}
+
+nav li a {
+  @apply text-inherit;
+}
